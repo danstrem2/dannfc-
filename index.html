@@ -3,199 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIX e Contatos</title>
+    <title>Danilo - Meus Contatos</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             color: #333;
         }
-        header {
-            background-color: #004aad;
-            color: white;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
             padding: 20px;
             text-align: center;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 30px 0;
         }
         header h1 {
             margin: 0;
             font-size: 2.5em;
         }
-        header p {
-            font-size: 1.2em;
+        .profile-image {
+            margin-top: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
         }
-        nav {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
+        .social-links {
+            margin: 40px 0;
         }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffc107;
-        }
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .intro h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            color: #004aad;
-        }
-        .intro p {
-            font-size: 1.2em;
-            color: #555;
-        }
-        .card {
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .card p {
-            color: #666;
-            line-height: 1.5;
-        }
-        .card a {
+        .social-links a {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #004aad;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
             color: white;
-            border-radius: 5px;
+            background-color: #007BFF;
+            border-radius: 50px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
-        .card a:hover {
-            background-color: #003680;
+        .social-links a:hover {
+            background-color: #0056b3;
         }
-        footer {
-            background-color: #004aad;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+        .social-links a.whatsapp {
+            background-color: #25D366;
+            font-weight: bold;
         }
-        footer p {
-            margin: 0;
-            font-size: 14px;
+        .social-links a.whatsapp:hover {
+            background-color: #1da754;
         }
-        .whatsapp-btn {
+        .whatsapp-cta {
             background-color: #25D366;
             color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 50px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: inline-block;
-            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
             text-decoration: none;
+            font-size: 20px;
+            display: inline-block;
+            margin: 20px 0;
+            transition: background-color 0.3s ease;
         }
-        .whatsapp-btn:hover {
+        .whatsapp-cta:hover {
             background-color: #1da754;
         }
         .image-gallery {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
-            margin-top: 40px;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
         .image-gallery img {
-            width: 100%;
-            max-width: 300px;
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
         .image-gallery img:hover {
             transform: scale(1.05);
         }
-        @media (max-width: 768px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
+        footer {
+            margin-top: 50px;
+            background-color: #007BFF;
+            color: white;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Meus Dados Bancários e PIX</h1>
-        <p>Seus contatos e informações em um só lugar</p>
+        <h1>Meus Perfis</h1>
+        <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-image">
     </header>
 
-    <nav>
-        <a href="#pix">PIX</a>
-        <a href="#contatos">Contatos</a>
-        <a href="#galeria">Galeria de Imagens</a>
-    </nav>
-
     <div class="container">
-        <!-- Seção de PIX -->
-        <section id="pix" class="intro">
-            <h2>Chaves PIX</h2>
-            <p>Aqui estão minhas chaves PIX para facilitar suas transferências:</p>
-        </section>
+        <p>Toque com seu dispositivo NFC ou use os links abaixo para acessar meus perfis e adicionar meu contato no WhatsApp.</p>
 
-        <!-- Seção de informações de PIX -->
-        <div class="card">
-            <h3>Chave PIX (Celular):</h3>
-            <p>+55 (85) 98755-6633</p>
+        <!-- Botão de chamada para ação no WhatsApp -->
+        <a href="https://wa.me/5585987556633" class="whatsapp-cta">Adicionar Contato no WhatsApp</a>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/seu_perfil" target="_blank">Instagram</a>
+            <a href="https://twitter.com/seu_perfil" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/in/seu_perfil" target="_blank">LinkedIn</a>
+            <a href="https://www.youtube.com/c/seu_canal" target="_blank">YouTube</a>
+            <a href="https://wa.me/5585987556633" class="whatsapp" target="_blank">WhatsApp</a>
         </div>
 
-        <div class="card">
-            <h3>Chave PIX (CPF):</h3>
-            <p>123.456.789-00</p>
+        <!-- Galeria de imagens -->
+        <div class="image-gallery">
+            <img src="https://via.placeholder.com/250x150" alt="Exemplo de Imagem 1">
+            <img src="https://via.placeholder.com/250x150" alt="Exemplo de Imagem 2">
+            <img src="https://via.placeholder.com/250x150" alt="Exemplo de Imagem 3">
         </div>
 
-        <!-- Seção de contatos -->
-        <section id="contatos" class="intro">
-            <h2>Meus Contatos</h2>
-            <p>Entre em contato comigo facilmente através das opções abaixo:</p>
-            <a href="https://wa.me/5585987556633" class="whatsapp-btn">Adicionar no WhatsApp</a>
-        </section>
-
-        <!-- Galeria de Imagens -->
-        <section id="galeria" class="intro">
-            <h2>Galeria de Imagens</h2>
-            <p>Algumas fotos que ilustram meus trabalhos e momentos importantes:</p>
-
-            <div class="image-gallery">
-                <img src="https://via.placeholder.com/300" alt="Imagem 1">
-                <img src="https://via.placeholder.com/300" alt="Imagem 2">
-                <img src="https://via.placeholder.com/300" alt="Imagem 3">
-                <img src="https://via.placeholder.com/300" alt="Imagem 4">
-            </div>
-        </section>
+        <p>Para suporte NFC, aproxime seu dispositivo de meu cartão NFC.</p>
     </div>
 
     <footer>
