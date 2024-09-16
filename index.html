@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danilo - Meus Contatos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 30px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .profile-image {
+            margin-top: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .social-links {
+            margin: 40px 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .social-links a:hover {
+            background-color: #0056b3;
+        }
+        .social-links a.whatsapp {
+            background-color: #25D366;
+            font-weight: bold;
+        }
+        .social-links a.whatsapp:hover {
+            background-color: #1da754;
+        }
+        .whatsapp-cta {
+            background-color: #25D366;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            display: inline-block;
+            margin: 20px 0;
+            transition: background-color 0.3s ease;
+        }
+        .whatsapp-cta:hover {
+            background-color: #1da754;
+        }
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .image-gallery img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            margin-top: 50px;
+            background-color: #007BFF;
+            color: white;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Meus Perfis</h1>
+        <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-image">
+    </header>
+
+    <div class="container">
+        <p>Toque com seu dispositivo NFC ou use os links abaixo para acessar meus perfis e adicionar meu contato no WhatsApp.</p>
+
+        <!-- Botão de chamada para ação no WhatsApp -->
+        <a href="https://wa.me/5585987480272" class="whatsapp-cta">Adicionar Contato no WhatsApp</a>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/seu_perfil" target="_blank">Instagram</a>
+            <a href="https://twitter.com/seu_perfil" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/in/seu_perfil" target="_blank">LinkedIn</a>
+            <a href="https://www.youtube.com/c/seu_canal" target="_blank">YouTube</a>
+            <a href="https://wa.me/5585987480272" class="whatsapp" target="_blank">WhatsApp</a>
+        </div>
+
+        <!-- Galeria de imagens -->
+        <div class="image-gallery">
+            <img src="https://via.placeholder.com/250x150" alt="Exemplo de Imagem 1">
+            <img src="https://via.placeholder.com/250x150" alt="Exemplo de Imagem 2">
+            <img src="https://via.placeholder.com/250x150" alt="Exemplo de Imagem 3">
+        </div>
+
+        <p>Para suporte NFC, aproxime seu dispositivo de meu cartão NFC.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Danilo | Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>
