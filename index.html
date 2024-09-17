@@ -46,10 +46,11 @@
             background-color: #007BFF;
             border-radius: 50px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .social-links a:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
         }
         .social-links a.whatsapp {
             background-color: #25D366;
@@ -71,6 +72,24 @@
         }
         .whatsapp-cta:hover {
             background-color: #1da754;
+        }
+        .nfc-icon {
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+            background-image: url('https://via.placeholder.com/100x100?text=NFC');
+            background-size: cover;
+            background-position: center;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .nfc-text {
+            font-size: 18px;
+            margin-top: 10px;
         }
         .image-gallery {
             display: flex;
@@ -99,6 +118,44 @@
             margin: 0;
             font-size: 14px;
         }
+        /* Carrossel simples */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-inner img {
+            min-width: 100%;
+        }
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .carousel-prev {
+            left: 10px;
+        }
+        .carousel-next {
+            right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -111,6 +168,10 @@
     <div class="container">
         <p>Toque com seu dispositivo NFC ou use os links abaixo para acessar meus perfis e adicionar meu contato no WhatsApp.</p>
 
+        <!-- Ícone NFC com animação -->
+        <div class="nfc-icon"></div>
+        <p class="nfc-text">Aproxime seu celular da tag NFC para adicionar meu contato rapidamente!</p>
+
         <!-- Botão de chamada para ação no WhatsApp -->
         <a href="https://wa.me/5585987480272" class="whatsapp-cta">Adicionar Contato no WhatsApp</a>
 
@@ -122,11 +183,15 @@
             <a href="https://wa.me/5585987480272" class="whatsapp" target="_blank">WhatsApp</a>
         </div>
 
-        <!-- Galeria de imagens -->
-        <div class="image-gallery">
-            <img src="https://via.placeholder.com/250x150" alt="Exemplo de Imagem 1">
-            <img src="https://via.placeholder.com/250x150" alt="Exemplo de Imagem 2">
-            <img src="https://via.placeholder.com/250x150" alt="Exemplo de Imagem 3">
+        <!-- Carrossel de imagens -->
+        <div class="carousel">
+            <div class="carousel-inner">
+                <img src="https://via.placeholder.com/900x500" alt="Exemplo de Imagem 1">
+                <img src="https://via.placeholder.com/900x500" alt="Exemplo de Imagem 2">
+                <img src="https://via.placeholder.com/900x500" alt="Exemplo de Imagem 3">
+            </div>
+            <button class="carousel-prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-next" onclick="moveCarousel(1)">&#10095;</button>
         </div>
 
         <p>Para suporte NFC, aproxime seu dispositivo de meu cartão NFC.</p>
@@ -135,6 +200,16 @@
     <footer>
         <p>&copy; 2024 Danilo | Todos os direitos reservados</p>
     </footer>
+
+    <script>
+        let currentIndex = 0;
+        function moveCarousel(direction) {
+            const carouselInner = document.querySelector('.carousel-inner');
+            const totalImages = carouselInner.children.length;
+            currentIndex = (currentIndex + direction + totalImages) % totalImages;
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
 
 </body>
 </html>
